@@ -13,7 +13,7 @@ Aplikacja pobrana i zainstalowana z powyższego adresu zawiera w sobie wszystkie
 `dotnet run --project DesolMichal.Dictionary/DesolMichal.Dictionary/DesolMichal.Dictionary.csproj`
 ## Wymagania wstępne
  - .NET 6
- - Klucz do WordsAPI (dostępny na stronie [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi/pricing)
+ - Klucz do WordsAPI (dostępny na stronie [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi/pricing))
 ## Informacje dotyczące oprogramowania Syncfusion Essential Studio for WPF
 Aplikacja wykorzystuje kontrolki nalężące do pakietu Syncfusion Essential Studio for WPF. Po uruchomieniu aplikacji może pojawić się komunikat informujący o braku licencji na pakiet Essential Studio. Osobiście posiadam odpowiednią licencję Community na powyższy pakiet natomiast ponieważ kod udostępniam publicznie nie uwzględniłem klucza licencyjnego w kodzie aplikacji. Licencję na produkt Syncfusion Essential Studio for WPF można uzyskać bezpłatnie na stronie [syncfusion.com](https://www.syncfusion.com/products/communitylicense). Brak licencji nie wpływa negatywnie na działanie aplikacji.
 ## Funkcje aplikacji
