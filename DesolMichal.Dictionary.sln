@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesolMichal.Dictionary", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesolMichal.Dictionary.Core", "DesolMichal.Dictionary\DesolMichal.Dictionary.Core\DesolMichal.Dictionary.Core.csproj", "{99BA3544-A62B-440B-B7B2-33FC4EBACAF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesolMichal.Dictionary.Modules.Dictionary", "DesolMichal.Dictionary.Modules.Dictionary\DesolMichal.Dictionary.Modules.Dictionary.csproj", "{A0D5310E-8AF1-4980-8134-5391B8AB3C0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesolMichal.Dictionary.Modules.Dictionary", "DesolMichal.Dictionary\Modules\DesolMichal.Dictionary.Modules.Dictionary\DesolMichal.Dictionary.Modules.Dictionary.csproj", "{A0D5310E-8AF1-4980-8134-5391B8AB3C0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

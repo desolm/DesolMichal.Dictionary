@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="Syncfusion.SfBusyIndicator.WPF" Version="20.1.0.60" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DesolMichal.Dictionary.Core\DesolMichal.Dictionary.Core.csproj" />
