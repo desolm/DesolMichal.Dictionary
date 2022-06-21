@@ -1,0 +1,34 @@
+﻿<syncfusion:ChromelessWindow x:Name="chromelessWindow" x:Class="DesolMichal.Dictionary.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:core="clr-namespace:DesolMichal.Dictionary.Services;assembly=DesolMichal.Dictionary.Core"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF"
+        Title="{Binding Title}" Height="350" Width="525"
+        syncfusionskin:SfSkinManager.Theme="{syncfusionskin:SkinManagerExtension ThemeName=FluentLight}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <syncfusion:MenuAdv>
+            <syncfusion:MenuItemAdv Header="Aplikacja">
+                <syncfusion:MenuItemAdv Header="Zakończ">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:CallMethodAction TargetObject="{Binding ElementName=chromelessWindow}" MethodName="Close"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </syncfusion:MenuItemAdv>
+            </syncfusion:MenuItemAdv>
+        </syncfusion:MenuAdv>
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" Grid.Row="1" />
+        <StatusBar Grid.Row="2">
+            <Label Content="Wykonanie: Michał Desol (129908)"/>
+        </StatusBar>
+    </Grid>
+</syncfusion:ChromelessWindow>

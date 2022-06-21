@@ -1,0 +1,67 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DesolMichal.Dictionary.Modules.Dictionary.Views"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" xmlns:Converters="clr-namespace:DesolMichal.Dictionary.Core.Converters;assembly=DesolMichal.Dictionary.Core" x:Class="DesolMichal.Dictionary.Modules.Dictionary.Views.DictionaryView"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280"
+             prism:ViewModelLocator.AutoWireViewModel="True" >
+    <UserControl.Resources>
+        <Converters:StringsArrayToCommaSeparatedStringConverter x:Key="StringsArrayToCommaSeparatedStringConverter"/>
+        <Converters:PartOfSpeechToStringConverter x:Key="PartOfSpeechToStringConverter"/>
+        <Converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Szukane słowo:" Margin="10,0,0,0"/>
+            <TextBox Grid.Column="1" Height="18" Margin="10,0,10,0" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}" Text="{Binding InputWord, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="2" Content="Szukaj..." Height="20" Margin="0,0,10,0" Width="70" Command="{Binding SearchWordCommand}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBooleanConverter}}"/>
+        </Grid>
+        <Label Content="{Binding ErrorMessage}" Grid.Row="1" Margin="10,0,0,0" Foreground="Red" />
+        <Separator Grid.Row="2" Margin="0,2,0,2"/>
+        <syncfusion:SfBusyIndicator Header="Wczytywanie..." Grid.Row="3" AnimationType="Fluent" IsBusy="{Binding IsBusy}">
+            <ScrollViewer>
+                <StackPanel Margin="20">
+                    <Label Content="{Binding Word.Name}" FontSize="24" FontWeight="Bold"/>
+                    <ItemsControl ItemsSource="{Binding Word.Definitions}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" CornerRadius="2,2,2,2" Padding="10" Margin="0,20,0,0">
+                                    <StackPanel>
+                                        <Label Content="{Binding Definition}" FontStyle="Italic" FontSize="20"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Część mowy:" FontWeight="Bold"/>
+                                            <Label Content="{Binding PartOfSpeech, Converter={StaticResource PartOfSpeechToStringConverter}, TargetNullValue=-}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Przykład:" FontWeight="Bold"/>
+                                            <Label Content="{Binding Example, TargetNullValue=-}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Synonimy:" FontWeight="Bold"/>
+                                            <Label Content="{Binding Synonyms, Converter={StaticResource StringsArrayToCommaSeparatedStringConverter}, TargetNullValue=-}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </syncfusion:SfBusyIndicator>
+    </Grid>
+</UserControl>
