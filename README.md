@@ -2,7 +2,7 @@
 # Słownik języka angielskiego
 W tym repozytorium znajduje się kod mojej aplikacji zaliczeniowej na zajęcia z programowania obiektowego.
 ## Instalacja aplikacji
-Instalator aplikacji dostępny jest pod adresem [zaliczenie-michal-desol.infinityfreeapp.com](http://zaliczenie-michal-desol.infinityfreeapp.com/).  
+Instalator aplikacji dostępny jest pod adresem [zaliczenie-michal-desol.tk](http://zaliczenie-michal-desol.tk/).  
 Aplikacja pobrana i zainstalowana z powyższego adresu zawiera w sobie wszystkie potrzebne zależności i nie jest wymagana jej konfiguracja.
 ## Kompilacja lokalna
  - Należy pobrać kod źródłowy korzystając z przycisków na górze strony lub poleceniem:  
